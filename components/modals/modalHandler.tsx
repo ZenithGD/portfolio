@@ -1,4 +1,4 @@
-import { RenderedModalContext } from "@/context/modalContext";
+import { RenderedModalHandlerContext } from "@/context/modalContext";
 import React, { Fragment } from 'react'
 
 /**
@@ -41,9 +41,9 @@ export const modalHandlerReducer: React.Reducer<ModalHandler, ModalAction> = (
     case 'add':
       {
         current.modals[action.id] = (
-          <RenderedModalContext.Provider value={{ id: action.id }}>
+          <RenderedModalHandlerContext.Provider value={{ id: action.id }}>
             {action.element}
-          </RenderedModalContext.Provider>
+          </RenderedModalHandlerContext.Provider>
         )
 
         return current

@@ -5,7 +5,7 @@ export type RenderedModalHandlerContext = {
   id: string;
 };
 
-export const RenderedModalContext = createContext<RenderedModalHandlerContext>(undefined!);
+export const RenderedModalHandlerContext = createContext<RenderedModalHandlerContext>(undefined!);
 
 export type ModalHandlerContext = {
   modalHandler: ModalHandler;
