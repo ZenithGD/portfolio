@@ -8,7 +8,8 @@ type Props = {}
 function WelcomeModal({ }: Props) {
   
   const { id } = useContext(RenderedModalHandlerContext)
-  const { modalHandler, dispatch } = useModalHandlerContext()
+  const { dispatch } = useModalHandlerContext()
+  
   return (
     <>
       <Modal

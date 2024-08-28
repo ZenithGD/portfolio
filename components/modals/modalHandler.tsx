@@ -23,12 +23,26 @@ export type ModalAction =
     type: 'close_all'
   };
 
+/**
+ * The structure that contains the list of modals currently active
+ */
 export type ModalHandler = { modals: Record<string, JSX.Element | undefined> }
 
+/**
+ * Create a new modal handler object
+ * @returns A new modal handler
+ */
 export function createModalHandler(): ModalHandler {
   return { modals : {} }
 }
 
+/**
+ * The reducer that controls the modal handler state and modifies its state
+ * with a modal action.
+ * @param state The current modal handler state
+ * @param action The action to apply
+ * @returns The new updated state
+ */
 export const modalHandlerReducer: React.Reducer<ModalHandler, ModalAction> = (
   state,
   action
@@ -67,6 +81,11 @@ export const modalHandlerReducer: React.Reducer<ModalHandler, ModalAction> = (
   }
 }
 
+/**
+ * Render the modals from the modal handler 
+ * @param modalHandler The modal handler
+ * @returns The JSX fragment containing all modals
+ */
 export function renderModals(modalHandler: ModalHandler): JSX.Element[]
 {
   return Object.entries(modalHandler.modals)

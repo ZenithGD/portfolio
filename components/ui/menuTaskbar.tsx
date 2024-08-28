@@ -1,8 +1,9 @@
 "use client"
 import { useModalHandlerContext } from '@/context/modalContext';
 import { TaskBar, List, Modal } from '@react95/core';
-import { ReaderClosed, WindowsExplorer } from '@react95/icons';
+import { ReaderClosed, Settings, WindowsExplorer } from '@react95/icons';
 import React from 'react'
+import SettingsModal from '../modals/settingsModal';
 
 type Props = {}
 
@@ -13,18 +14,17 @@ function MenuTaskbar({ }: Props) {
   return (
     <TaskBar list={<List>
       <List.Item
-        icon={<ReaderClosed variant="32x32_4" />}
+        icon={<Settings variant="32x32_4"/>}
         onClick={() => dispatch({
           type: 'add', id: "starter2", element: <Modal
             onClose={ () => dispatch({ type: "close", id: "starter2" }) }
-            icon={<WindowsExplorer variant="16x16_4" />} title="Windows Explorer 2" width="300px" height="200px"
-          />
+            icon={<Settings variant="16x16_4" />} title="Windows Explorer 2" width="500px" height="600px"
+          >
+            <SettingsModal />  
+          </Modal>
         })}
       >
         Local Disk (C:)
-      </List.Item>
-      <List.Item icon={<WindowsExplorer variant="32x32_4" />}>
-        Windows Explorer
       </List.Item>
     </List>} />
   )

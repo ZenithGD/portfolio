@@ -1,0 +1,104 @@
+{
+    "black_thatch": {
+        "label": "Black Thatch",
+        "filename": "BlackThatch.webp",
+        "tiled" : true,
+        "stretch" : false
+    },
+    "blocks": {
+        "label": "Blocks",
+        "filename": "Blocks.webp",
+        "tiled" : true,
+        "stretch" : false
+    },
+    "blue_rivets": {
+        "label": "Blue Rivets",
+        "filename": "BlueRivets.webp",
+        "tiled" : true,
+        "stretch" : false
+    },
+    "bubbles": {
+        "label": "Bubbles",
+        "filename": "Bubbles.webp",
+        "tiled" : true,
+        "stretch" : false
+    },
+    "clouds": {
+        "label": "Clouds",
+        "filename": "Bubbles.webp",
+        "tiled" : false,
+        "stretch" : true
+    },
+    "forest": {
+        "label": "Forest",
+        "filename": "Forest.webp",
+        "tiled" : true,
+        "stretch" : true
+    },
+    "gold_weave": {
+        "label": "Gold Weave",
+        "filename": "GoldWeave.webp",
+        "tiled" : true,
+        "stretch" : false
+    },
+    "houndstooth": {
+        "label": "Houndstooth",
+        "filename": "Houndstooth.webp",
+        "tiled" : true,
+        "stretch" : false
+    },
+    "metal_links": {
+        "label": "Metal Links",
+        "filename": "MetalLinks.webp",
+        "tiled" : true,
+        "stretch" : false
+    },
+    "pinstripe": {
+        "label": "Pinstripe",
+        "filename": "Pinstripe.webp",
+        "tiled" : true,
+        "stretch" : false
+    },
+    "sandstone": {
+        "label": "Sandstone",
+        "filename": "Sandstone.webp",
+        "tiled" : true,
+        "stretch" : false
+    },
+    "setup": {
+        "label": "Setup",
+        "filename": "Setup.webp",
+        "tiled" : false,
+        "stretch" : true
+    },
+    "stitches": {
+        "label": "Stitches",
+        "filename": "Stitches.webp",
+        "tiled" : true,
+        "stretch" : false
+    },
+    "straw_mat": {
+        "label": "Straw Mat",
+        "filename": "StrawMat.webp",
+        "tiled" : true,
+        "stretch" : false
+    },
+    "tiles": {
+        "label": "Tiles",
+        "filename": "Tiles.webp",
+        "tiled" : true,
+        "stretch" : false
+    },
+    "triangles": {
+        "label": "Triangles",
+        "filename": "Triangles.webp",
+        "tiled" : true,
+        "stretch" : false
+    },
+    "waves": {
+        "label": "Waves",
+        "filename": "Waves.webp",
+        "tiled" : true,
+        "stretch" : false
+    }
+}
