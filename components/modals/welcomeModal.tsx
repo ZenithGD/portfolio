@@ -38,8 +38,8 @@ function WelcomeModal({ width, height }: Props) {
             <div className='flex-grow'>
 
             </div>
-            <div className='flex justify-end p-4'>
-              <Button>Close</Button>
+            <div className='flex justify-end p-4 bg-red-500'>
+              <Button className="pt-1 pb-0.5">Close</Button>
             </div>
           </div>
           

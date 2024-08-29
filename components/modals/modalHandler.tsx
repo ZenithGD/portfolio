@@ -20,13 +20,20 @@ export type ModalAction =
     id: string,
   } |
   {
+    type: 'set_visibility',
+    id: string,
+    visible: boolean
+  } |
+  {
     type: 'close_all'
   };
 
 /**
  * The structure that contains the list of modals currently active
  */
-export type ModalHandler = { modals: Record<string, JSX.Element | undefined> }
+export type ModalHandler = {
+  modals: Record<string, { window: JSX.Element, visible: boolean }>
+}
 
 /**
  * Create a new modal handler object
@@ -54,11 +61,22 @@ export const modalHandlerReducer: React.Reducer<ModalHandler, ModalAction> = (
   switch (action.type) {
     case 'add':
       {
-        current.modals[action.id] = (
-          <RenderedModalHandlerContext.Provider value={{ id: action.id }}>
-            {action.element}
-          </RenderedModalHandlerContext.Provider>
-        )
+        current.modals[action.id] =
+        {
+          window: (
+            <RenderedModalHandlerContext.Provider value={{ id: action.id }}>
+              {action.element}
+            </RenderedModalHandlerContext.Provider>
+          ),
+          visible : true
+        }
+
+        return current
+      }
+    case 'set_visibility':
+      {
+        if ( current.modals[action.id] )
+          current.modals[action.id]!!.visible = action.visible
 
         return current
       }
@@ -92,7 +110,7 @@ export function renderModals(modalHandler: ModalHandler): JSX.Element[]
     .filter(([_, entry]) => entry !== null)
     .map(([key, entry]) =>
       <Fragment key={"modal-" + key}>
-        {entry}
+        {entry.window}
       </Fragment>
     )
 }

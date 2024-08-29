@@ -10,6 +10,13 @@ export const RenderedModalHandlerContext = createContext<RenderedModalHandlerCon
 export type ModalHandlerContext = {
   modalHandler: ModalHandler;
   dispatch: Dispatch<ModalAction>;
+
+  /// Add a window with id and return whether the window already exists.
+  /// In this case, the window should return into focused (i.e. it will be maximized)
+  addWindow: (id: string, window: JSX.Element) => boolean;
+
+  /// Remove a window with id 
+  removeWindow: (id: string) => boolean;
 };
 
 export const createModalHandlerContext = () => {
