@@ -3,7 +3,8 @@ import { useModalHandlerContext } from '@/context/modalContext';
 import { TaskBar, List, Modal } from '@react95/core';
 import { ReaderClosed, Settings, WindowsExplorer } from '@react95/icons';
 import React from 'react'
-import SettingsModal from '../modals/settingsModal';
+import SettingsModal from '../modals/displayPropertiesModal';
+import DisplayPropertiesModal from '../modals/displayPropertiesModal';
 
 type Props = {}
 
@@ -20,7 +21,7 @@ function MenuTaskbar({ }: Props) {
             onClose={ () => dispatch({ type: "close", id: "starter2" }) }
             icon={<Settings variant="16x16_4" />} title="Windows Explorer 2" width="500px" height="600px"
           >
-            <SettingsModal />  
+            <DisplayPropertiesModal />  
           </Modal>
         })}
       >

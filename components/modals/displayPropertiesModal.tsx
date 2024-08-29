@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 type Props = {}
 
-function SettingsModal({ }: Props) {
+function DisplayPropertiesModal({ }: Props) {
   return (
     <div className='flex justify-center'>
       <div>
@@ -113,4 +113,4 @@ function SettingsModal({ }: Props) {
   )
 }
 
-export default SettingsModal
+export default DisplayPropertiesModal
