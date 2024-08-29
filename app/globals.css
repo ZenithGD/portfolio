@@ -1,3 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: "MS Serif";
+    src: url("../public/assets/fonts/micross.ttf");
+}
+
+@font-face {
+    font-family: "Franklin Gothic Black";
+    src: url("../public/assets/fonts/Franklin\ Gothic\ Black.ttf");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Franklin Gothic";
+    src: url("../public/assets/fonts/FranklinGothic.ttf");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Franklin Gothic Light";
+    src: url("../public/assets/fonts/Franklin\ Gothic\ Light.ttf");
+    font-weight: 300;
+}
+
+
+@font-face {
+    font-family: "Franklin Gothic Condensed";
+    src: url("../public/assets/fonts/Franklin\ Gothic\ Condensed.ttf");
+}

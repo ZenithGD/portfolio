@@ -15,7 +15,7 @@ function ScreenContent({ }: Props) {
     // create "welcome" modal at roughly the middle of the screen,
     // plus or minus a few pixels
     dispatch({
-      type: 'add', id: "welcome", element: <WelcomeModal width={600} height={400} />
+      type: 'add', id: "welcome", element: <WelcomeModal width={500} height={400} />
     });
 
     // and nuke all modals when this page is unmounted
