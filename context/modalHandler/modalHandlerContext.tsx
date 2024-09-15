@@ -1,5 +1,5 @@
 import React, { createContext, Dispatch } from 'react';
-import { ModalHandler, ModalAction, createModalHandler } from '@/components/modals/modalHandler';
+import { ModalHandler, ModalAction, createModalHandler } from '@/context/modalHandler/modalHandler';
 
 export type RenderedModalHandlerContext = {
   id: string;
@@ -17,6 +17,9 @@ export type ModalHandlerContext = {
 
   /// Remove a window with id 
   removeWindow: (id: string) => boolean;
+
+  /// close all opened windows
+  closeAll: () => void
 };
 
 export const createModalHandlerContext = () => {
@@ -33,7 +36,7 @@ export function useModalHandlerContext() {
 
   if (context === undefined) {
 
-    throw new Error('useModalHandlerContext must be used within a CountProvider')
+    throw new Error('useModalHandlerContext must be used within a ModalHandlerProvider')
 
   }
 

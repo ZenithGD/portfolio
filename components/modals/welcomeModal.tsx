@@ -1,5 +1,5 @@
 "use client"
-import { RenderedModalHandlerContext, useModalHandlerContext } from '@/context/modalContext'
+import { RenderedModalHandlerContext, useModalHandlerContext } from "@/context/modalHandler/modalHandlerContext"
 import { cn } from '@/lib/utils'
 import { Button, Modal } from '@react95/core'
 import { User1 } from '@react95/icons'
@@ -36,14 +36,14 @@ function WelcomeModal({ width, height }: Props) {
     <>
       <Modal
         title="Welcome to my portfolio!"
-        onClose={() => handleCloseWindow}
+        onClose={handleCloseWindow}
         icon={<User1 variant="14x14_4" />} width={`${width}px`} height={`${height}px`}
         className='flex flex-col'
         boxShadow="$out"
       >
         <div className='-m-[5px] -mb-[10px] bg-center bg-w98-clouds flex flex-col flex-grow'>
           <div className='h-24 relative w-full'>
-            <div className='ml-14 absolute top-0 w-1/2 h-full flex flex-col justify-center z-20'>
+            <div className='ml-10 absolute top-0 w-1/2 h-full flex flex-col justify-center z-20'>
               <div className='flex font-light font-frlight text-xl -mb-1.5 items-end'>
                 Microsoft® <Image className="pb-1" width={30} height={15} src="/assets/images/pictures/w98logo.png" alt="Windows 98 logo"/>
               </div>

@@ -1,5 +1,5 @@
-import { RenderedModalHandlerContext } from "@/context/modalContext";
 import React, { Fragment } from 'react'
+import { RenderedModalHandlerContext } from './modalHandlerContext';
 
 /**
  * The action to perform with the reducer.
