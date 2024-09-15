@@ -90,18 +90,35 @@ export function Contextual({ menuHandler } : ContextualProps)
   useEffect(() => {
     // only add the event listener when the dropdown is opened
     if (!menuHandler.current) return;
-    function handleClick(event: any) {
-      if (focusRef.current && !focusRef.current.contains(event.target)) {
-        console.log("removing menu")
+
+    /**
+     * This handler controls the behaviour when clicking inside the menu
+     * @param event 
+     */
+    function handleClickMenu(event: any) {
+      if (focusRef.current && focusRef.current.contains(event.target)) {
         closeMenu()
       }
     }
-    window.addEventListener("click", handleClick);
+
+    /**
+     * This handler controls the behaviour on mouse down outside the menu
+     * @param event 
+     */
+    function handleClickOutside(event: any) {
+      if (focusRef.current && !focusRef.current.contains(event.target)) {
+        closeMenu()
+      }
+    }
+    window.addEventListener("mousedown", handleClickOutside);
+    window.addEventListener("click", handleClickMenu);
+
     // clean up
-    return () => window.removeEventListener("click", handleClick);
+    return () => {
+      window.removeEventListener("mousedown", handleClickOutside);
+      window.removeEventListener("click", handleClickMenu);
+    }
   }, [menuHandler.current])
-  
-  console.log(menuHandler.current)
 
   if (!menuHandler.current) return <></>
 

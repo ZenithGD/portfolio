@@ -1,5 +1,6 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useContext } from 'react'
 import { RenderedModalHandlerContext } from './modalHandlerContext';
+import { ModalContext } from '@react95/core';
 
 /**
  * The action to perform with the reducer.
@@ -12,7 +13,8 @@ import { RenderedModalHandlerContext } from './modalHandlerContext';
 export type ModalAction =
   {
     type: 'add',
-    id: string
+    id: string,
+    title?: string
     element: JSX.Element,
   } |
   {
@@ -55,6 +57,7 @@ export const modalHandlerReducer: React.Reducer<ModalHandler, ModalAction> = (
   action
 ) => {
 
+  const { setActiveWindow } = useContext(ModalContext)
   const current = { ...state }
 
   // handle action type
@@ -70,6 +73,7 @@ export const modalHandlerReducer: React.Reducer<ModalHandler, ModalAction> = (
           ),
           visible : true
         }
+        if ( action.title ) setActiveWindow(action.title)
 
         return current
       }

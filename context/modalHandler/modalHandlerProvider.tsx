@@ -8,12 +8,12 @@ function ModalProvider({ children }: React.PropsWithChildren<Props>) {
   // modal reducer
   const [modalHandler, dispatch] = useReducer(modalHandlerReducer, createModalHandler())
 
-  const addWindow = (id: string, window: JSX.Element) =>
+  const addWindow = (id: string, window: JSX.Element, title?: string) =>
   {
     if (modalHandler.modals[id])
       return false
     
-    dispatch({ type: "add", id, element: window })
+    dispatch({ type: "add", id, element: window, title: title })
     return true
   }
 

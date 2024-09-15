@@ -13,7 +13,7 @@ export type ModalHandlerContext = {
 
   /// Add a window with id and return whether the window already exists.
   /// In this case, the window should return into focused (i.e. it will be maximized)
-  addWindow: (id: string, window: JSX.Element) => boolean;
+  addWindow: (id: string, window: JSX.Element, title? : string) => boolean;
 
   /// Remove a window with id 
   removeWindow: (id: string) => boolean;

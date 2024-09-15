@@ -6,6 +6,7 @@ type Props = {}
 
 function DisplayPropertiesModal({ }: Props) {
   return (
+    
     <div className='flex justify-center'>
       <div>
         <Tabs width="475px" defaultActiveTab="General">
