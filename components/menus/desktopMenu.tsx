@@ -1,6 +1,6 @@
 import { useMenuHandlerContext } from '@/context/menuHandler/menuHandlerContext'
 import { useModalHandlerContext } from '@/context/modalHandler/modalHandlerContext'
-import { List, Modal } from '@react95/core'
+import { List, Modal, TitleBar } from '@react95/core'
 import React from 'react'
 import DisplayPropertiesModal from '../modals/displayPropertiesModal'
 import { Settings } from '@react95/icons'
@@ -31,10 +31,18 @@ function DesktopMenu({ }: Props) {
           "display_properties",
           <Modal
             title="Display properties"
-            onClose={ () => removeWindow("display_properties") }
+            titleBarOptions={[
+              <TitleBar.Help
+                key="help"
+                onClick={() => { alert('Help!') }} />,
+              <TitleBar.Close 
+                key="close" 
+                onClick={() => removeWindow("display_properties")}
+              />
+            ]}
             icon={<Settings variant="16x16_4" />} width="500px" height="600px"
           >
-            <DisplayPropertiesModal />  
+            <DisplayPropertiesModal />
           </Modal>,
           "Display properties"
         )}>Properties</List.Item>
