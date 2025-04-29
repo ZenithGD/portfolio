@@ -1,6 +1,6 @@
 "use client"
 
-import { TaskBar, List, Modal } from '@react95/core';
+import { TaskBar, List, Modal, TitleBar } from '@react95/core';
 import { Settings } from '@react95/icons';
 import React from 'react'
 import DisplayPropertiesModal from '../modals/displayPropertiesModal';
@@ -17,7 +17,18 @@ function MenuTaskbar({ }: Props) {
       <List.Item
         icon={<Settings variant="32x32_4"/>}
         onClick={() => addWindow("starter2", <Modal
-            onClose={ () => removeWindow("starter2") }
+          titleBarOptions={[
+              <TitleBar.Help
+                className="tw-react95-img"
+                key="help"
+                onClick={() => { alert('Help!') }} />,
+              <Modal.Minimize className="tw-react95-img"/>,
+              <TitleBar.Close 
+                className="tw-react95-img"
+                key="close" 
+                onClick={ () => removeWindow("starter2") }
+              />
+            ]}
             icon={<Settings variant="16x16_4" />} title="Windows Explorer 2" width="500px" height="600px"
           >
             <DisplayPropertiesModal />  

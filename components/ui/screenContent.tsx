@@ -1,5 +1,5 @@
 import { Modal, List, Frame, Button } from '@react95/core'
-import { User1 } from '@react95/icons'
+import { Mshtml32528, User1 } from '@react95/icons'
 import React, { useEffect } from 'react'
 import { renderModals } from '@/context/modalHandler/modalHandler';
 import WelcomeModal from '../modals/welcomeModal';
@@ -17,7 +17,6 @@ function ScreenContent({ }: Props) {
   const { modalHandler, addWindow, removeWindow, closeAll } = useModalHandlerContext()
   const { menuHandler, dispatch, openMenu, closeMenu } = useMenuHandlerContext()
   
-  const { clippy } = useClippy();
   
   useEffect(() => {
     // create "welcome" modal at roughly the middle of the screen,
@@ -29,31 +28,6 @@ function ScreenContent({ }: Props) {
     };
   }, []);
 
-  useEffect(() => {
-
-    // wait for clippy to load
-    if (clippy) {
-      clippy.play('GetAttention');
-      clippy.speak("Welcome to my portfolio! You can ask me for help to guide you through the page!", false)
-    
-      // Wait for `_el` to be appended to the DOM
-      const el = document.querySelector('.clippy');
-      
-      if (el) {
-        const handleClick = () => {
-          clippy.play('GetAttention');
-          clippy.speak("Hello!", false); // Replace with any desired animation or method
-        };
-
-        el.addEventListener("contextmenu", handleClick);
-
-        // Clean up the event listener
-        return () => {
-          el.removeEventListener("contextmenu", handleClick);
-        };
-      }
-    }
-  }, [clippy]);
 
   const showDesktopMenu = (e : React.MouseEvent<HTMLDivElement>) => {
     e.preventDefault()
@@ -75,7 +49,7 @@ function ScreenContent({ }: Props) {
       <div className='px-6 h-[95vh] w-auto flex flex-col flex-wrap justify-start gap-2 overflow-y-auto overflow-x-clip'>
         <DesktopIcon
           onClick={desktopIconHandler}
-          icon={<User1 variant="32x32_4"/>}
+          icon={<Mshtml32528 variant="48x48_8"/>}
           label="Welcome to my portfolio!"
         />
       </div>

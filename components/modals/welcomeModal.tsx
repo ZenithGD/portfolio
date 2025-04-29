@@ -38,10 +38,12 @@ function WelcomeModal({ width, height }: Props) {
         title="Welcome to my portfolio!"
         titleBarOptions={[
           <TitleBar.Help
+          className="tw-react95-img"
             key="help"
             onClick={() => { alert('Help!') }} />,
-          <Modal.Minimize />,
+          <Modal.Minimize className="tw-react95-img"/>,
           <TitleBar.Close 
+            className="tw-react95-img"
             key="close" 
             onClick={handleCloseWindow}
           />
@@ -50,7 +52,7 @@ function WelcomeModal({ width, height }: Props) {
         className='flex flex-col'
         boxShadow="$out"
       >
-        <div className='bg-center bg-w98-clouds flex flex-col flex-grow'>
+        <div className='bg-center bg-w98-clouds flex flex-col grow'>
           <div className='h-24 relative w-full'>
             <div className='ml-10 absolute top-0 w-1/2 h-full flex flex-col justify-center z-20'>
               <div className='flex font-light font-frlight text-xl -mb-1.5 items-end'>
@@ -65,10 +67,10 @@ function WelcomeModal({ width, height }: Props) {
               <span className='bg-yellow-500 top-5 w-1/6 h-0.5'></span>
               <span className='bg-green-500 top-5 w-1/6 h-0.5'></span>
               <span className='bg-blue-500 top-5 w-1/6 h-0.5'></span>
-              <span className='bg-gradient-to-r from-blue-500 to-white top-5 w-1/3 h-0.5'></span>
+              <span className='bg-linear-to-r from-blue-500 to-white top-5 w-1/3 h-0.5'></span>
             </div>
           </div>
-          <div className="flex flex-grow">
+          <div className="flex grow">
             <div className='w-2/5 flex flex-col'>
               <h2 className='bg-black text-white tracking-[0.5em] pl-4'>CONTENTS</h2>
               <div className='flex flex-col divide-y-2 divide-gray-400'>
@@ -87,7 +89,7 @@ function WelcomeModal({ width, height }: Props) {
               </div>
             </div>
             <div className='flex flex-col w-3/5'>
-              <div className='flex flex-col flex-grow p-4 gap-2'>
+              <div className='flex flex-col grow p-4 gap-2'>
                 <h2 className='font-black text-xl font-msserif'>Welcome</h2>
                 <p className='text-[13px] '>Welcome to the exciting new world of Windows 98, where your computer desktop meets the Internet!</p>
                 <p className='text-[13px] '>Sit back and relax as you take a brief tour of the options available on this screen.</p>
