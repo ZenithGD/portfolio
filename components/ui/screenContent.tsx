@@ -1,5 +1,5 @@
 import { Modal, List, Frame, Button } from '@react95/core'
-import { Mshtml32528, User1 } from '@react95/icons'
+import { Mshtml32528, Msnp32FolderIcon, User1 } from '@react95/icons'
 import React, { useEffect } from 'react'
 import { renderModals } from '@/context/modalHandler/modalHandler';
 import WelcomeModal from '../modals/welcomeModal';
@@ -9,6 +9,7 @@ import { useMenuHandlerContext } from '@/context/menuHandler/menuHandlerContext'
 import { Contextual } from '@/context/menuHandler/menuHandler';
 
 import { useClippy, ClippyProvider } from '@react95/clippy';
+import ProjectBrowser from '../modals/projectBrowser';
 
 type Props = {}
 
@@ -35,10 +36,16 @@ function ScreenContent({ }: Props) {
     openMenu("desktop", { x: e.clientX, y: e.clientY })
   }
 
-  const desktopIconHandler : React.MouseEventHandler<HTMLButtonElement> = (e) => {
+  const welcomeIconHandler : React.MouseEventHandler<HTMLButtonElement> = (e) => {
     e.preventDefault()
 
     addWindow("welcome", <WelcomeModal width={500} height={400} />)
+  }
+
+  const projectIconHandler : React.MouseEventHandler<HTMLButtonElement> = (e) => {
+    e.preventDefault()
+
+    addWindow("project", <ProjectBrowser width={700} height={600} />)
   }
 
   return <>
@@ -48,9 +55,14 @@ function ScreenContent({ }: Props) {
     <div onContextMenu={showDesktopMenu}>
       <div className='px-6 h-[95vh] w-auto flex flex-col flex-wrap justify-start gap-2 overflow-y-auto overflow-x-clip'>
         <DesktopIcon
-          onClick={desktopIconHandler}
+          onClick={welcomeIconHandler}
           icon={<Mshtml32528 variant="48x48_8"/>}
           label="Welcome to my portfolio!"
+        />
+        <DesktopIcon
+          onClick={projectIconHandler}
+          icon={<Msnp32FolderIcon variant="32x32_4"/>}
+          label="Project Explorer"
         />
       </div>
     </div>

@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 /*
   The default border color has changed to `currentcolor` in Tailwind CSS v4,
@@ -19,8 +19,16 @@
 }
 
 @layer utilities {
+  .tw-react95-img {
+    padding: 0 !important;
+  }
+
   .tw-react95-img img {
     max-width: none !important;
+  }
+
+  button {
+    cursor: pointer;
   }
 }
 
@@ -46,7 +54,6 @@
     src: url("../public/assets/fonts/Franklin\ Gothic\ Light.ttf");
     font-weight: 300;
 }
-
 
 @font-face {
     font-family: "Franklin Gothic Condensed";

@@ -1,0 +1,32 @@
+{
+    "name" : "C:",
+    "children" : [
+        {
+            "name" : "New year projects",
+            "children" : [
+                {
+                    "name" : "year2025"
+                }
+            ]
+        },
+        {
+            "name" : "Graphics",
+            "children" : [
+                {
+                    "name" : "year2025"
+                }
+            ]
+        },
+        {
+            "name" : "Games",
+            "children" : [
+                {
+                    "name" : "year2025"
+                }
+            ]
+        },
+        {
+            "name" : "README.txt"
+        }
+    ]
+}

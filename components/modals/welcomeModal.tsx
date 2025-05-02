@@ -38,12 +38,13 @@ function WelcomeModal({ width, height }: Props) {
         title="Welcome to my portfolio!"
         titleBarOptions={[
           <TitleBar.Help
-          className="tw-react95-img"
+            className="tw-react95-img !p-0"
             key="help"
             onClick={() => { alert('Help!') }} />,
-          <Modal.Minimize className="tw-react95-img"/>,
+          <Modal.Minimize 
+            className="tw-react95-img !p-0"/>,
           <TitleBar.Close 
-            className="tw-react95-img"
+            className="tw-react95-img !p-0"
             key="close" 
             onClick={handleCloseWindow}
           />
@@ -52,7 +53,7 @@ function WelcomeModal({ width, height }: Props) {
         className='flex flex-col'
         boxShadow="$out"
       >
-        <div className='bg-center bg-w98-clouds flex flex-col grow'>
+        <div className='bg-center bg-[url(/assets/images/pictures/Welcome.webp)] flex flex-col grow'>
           <div className='h-24 relative w-full'>
             <div className='ml-10 absolute top-0 w-1/2 h-full flex flex-col justify-center z-20'>
               <div className='flex font-light font-frlight text-xl -mb-1.5 items-end'>
